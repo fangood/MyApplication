@@ -10,7 +10,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import com.android.module_compose2.dao.User
+import com.android.module_compose2.database.UserPreviewParameterProvider
 import com.android.module_compose2.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,4 +48,20 @@ fun GreetingPreview() {
     MyApplicationTheme {
         Greeting("Android")
     }
+}
+
+@Preview(showBackground = false, backgroundColor = 0xFFB07C7C)
+@Composable
+private fun UserProfilePreview(
+    @PreviewParameter(
+        UserPreviewParameterProvider::class,limit = 2)user: User) {
+    UserProfile(user)
+}
+
+@Composable
+private fun UserProfile(user: User){
+    Text(
+        text = user.name,
+        color = Color.White
+    )
 }
