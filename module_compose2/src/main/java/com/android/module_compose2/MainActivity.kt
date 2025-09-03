@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.unit.sp
 import com.android.module_compose2.dao.User
 import com.android.module_compose2.database.UserPreviewParameterProvider
 import com.android.module_compose2.ui.theme.MyApplicationTheme
@@ -24,10 +26,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
+
                 }
             }
         }
@@ -36,10 +40,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    Column {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+        UserProfile(user = User("张三"))
+    }
+
 }
 
 @Preview(showBackground = true,
@@ -60,9 +68,10 @@ private fun UserProfilePreview(
 }
 
 @Composable
-private fun UserProfile(user: User){
+private fun UserProfile(user: User?){
     Text(
-        text = user.name,
-        color = Color.White
+        text = user?.name ?: "未知用户",
+        color = Color.Black,
+        fontSize = 20.sp
     )
 }
