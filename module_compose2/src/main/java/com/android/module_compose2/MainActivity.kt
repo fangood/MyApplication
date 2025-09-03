@@ -42,7 +42,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true,
+    backgroundColor = 0xFF000045)
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
