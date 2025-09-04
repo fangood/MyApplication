@@ -25,7 +25,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier.fillMaxSize()
+                ) { innerPadding ->
 
                     Greeting(
                         name = "Android",
@@ -50,8 +52,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 }
 
-@Preview(showBackground = true,
-    backgroundColor = 0xFF000045)
+@Preview(
+    showBackground = true,
+    backgroundColor = 0xFF000045
+)
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
@@ -63,12 +67,14 @@ fun GreetingPreview() {
 @Composable
 private fun UserProfilePreview(
     @PreviewParameter(
-        UserPreviewParameterProvider::class,limit = 2)user: User) {
+        UserPreviewParameterProvider::class, limit = 2
+    ) user: User
+) {
     UserProfile(user)
 }
 
 @Composable
-private fun UserProfile(user: User?){
+private fun UserProfile(user: User?) {
     Text(
         text = user?.name ?: "未知用户",
         color = Color.Black,

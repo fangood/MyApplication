@@ -58,4 +58,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.compose.ui)
+    implementation(libs.viewmodel.compose)
 }

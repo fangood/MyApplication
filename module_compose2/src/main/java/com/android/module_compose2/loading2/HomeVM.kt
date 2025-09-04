@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.module_compose2.loading.BaseViewModel
 import com.android.module_compose2.loading.LoadingComponent
 import kotlinx.coroutines.delay
@@ -38,7 +39,7 @@ class HomeVM : BaseViewModel() {
 
 
 @Composable
-fun HomeScreen(vm: HomeVM = HomeVM()) {
+fun HomeScreen(vm: HomeVM = viewModel ()) {
     Column(modifier = Modifier.systemBarsPadding()) {
         Text(text = "标题栏")
         LoadingComponent(component = vm.loadingComponent) {
