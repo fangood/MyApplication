@@ -304,6 +304,7 @@ fun RippleTest(modifier: Modifier = Modifier){
     ) {
         Text(text = "Click me")
     }
+
 }
 
 @Preview(showBackground = false, backgroundColor = 0xFFB07C7C)
