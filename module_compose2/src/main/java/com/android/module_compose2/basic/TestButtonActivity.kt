@@ -62,6 +62,8 @@ class TestButtonActivity : ComponentActivity() {
                         Image(painter =
                             androidx.compose.ui.res.painterResource(id = R.mipmap.avatar),
                             contentDescription = "avatar")
+                        Spacer(modifier = Modifier.height(20.dp))
+                        ImageUsageExample()
 
                     }
 
@@ -121,6 +123,7 @@ fun TestButtonPreview() {
                 Image(painter =
                     androidx.compose.ui.res.painterResource(id = R.mipmap.avatar),
                     contentDescription = "avatar")
+                ImageUsageExample()
             }
 
         }

@@ -61,4 +61,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.compose.ui)
     implementation(libs.viewmodel.compose)
+    implementation(libs.io.coil.kt)
 }
