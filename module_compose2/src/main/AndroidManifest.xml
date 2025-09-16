@@ -39,6 +39,12 @@
             android:theme="@style/Theme.MyApplication"
             android:exported="true"
             android:name=".basic.TestButtonActivity">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.MyApplication"
+            android:exported="true"
+            android:name=".layout.TestLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
