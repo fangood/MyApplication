@@ -29,3 +29,4 @@ rootProject.name = "MyApplication"
 include(":app")
 include(":module_compose")
 include(":module_compose2")
+include(":module_net")
