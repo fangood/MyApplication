@@ -62,4 +62,5 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.viewmodel.compose)
     implementation(libs.io.coil.kt)
+    implementation(libs.constraintlayout.compose)
 }

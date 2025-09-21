@@ -45,6 +45,18 @@
             android:theme="@style/Theme.MyApplication"
             android:exported="true"
             android:name=".layout.TestLayoutActivity">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.MyApplication"
+            android:exported="true"
+            android:name=".constraintlayout.ConstraintLayoutActivity">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.MyApplication"
+            android:exported="true"
+            android:name=".list.ContactListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
