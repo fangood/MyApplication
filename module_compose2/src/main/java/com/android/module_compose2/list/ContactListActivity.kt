@@ -15,7 +15,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -96,19 +95,6 @@ class ContactListActivity : ComponentActivity() {
     }
 }
 
-// 联系人数据类
-data class Contact(
-    val name: String,
-    val phone: String,
-    val id: Long = UUID.randomUUID().mostSignificantBits and Long.MAX_VALUE
-)
-
-// 按字母分组的联系人数据类
-data class ContactGroup(
-    val initial: Char,
-    val contacts: List<Contact>
-)
-
 // 主屏幕
 @Composable
 fun ContactListScreen(contacts: List<Contact>) {
@@ -169,6 +155,19 @@ fun ContactListScreen(contacts: List<Contact>) {
                 .align(Alignment.CenterEnd)
                 .padding(end = 8.dp)
         )
+        Button (
+            onClick = {
+                // 滚动到顶部
+                coroutineScope.launch {
+                    listState.animateScrollToItem(0)
+                }
+            },
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 8.dp)
+        ) {
+            Text("Scroll to Top")
+        }
     }
 }
 
