@@ -63,6 +63,12 @@
             android:theme="@style/Theme.MyApplication"
             android:exported="true"
             android:name=".list.ContactListActivity2">
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.MyApplication"
+            android:exported="true"
+            android:name=".scaffold.ScaffoldActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
