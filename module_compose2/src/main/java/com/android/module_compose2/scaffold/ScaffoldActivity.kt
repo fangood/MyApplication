@@ -13,19 +13,26 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.android.module_compose2.ui.theme.MyApplicationTheme
+import kotlinx.coroutines.launch
 
 class ScaffoldActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
@@ -33,7 +40,8 @@ class ScaffoldActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
 //                ScaffoldActivityUI()
-                ScaffoldWithFab()
+//                ScaffoldWithFab()
+                ScaffoldWithDrawer()
             }
         }
     }
@@ -137,4 +145,102 @@ fun ScaffoldWithFab() {
         }
     }
 }
+@Preview
+@Composable
+fun ScaffoldWithSnackBarPreview() {
+    MyApplicationTheme {
+        ScaffoldWithSnackBar()
+    }
+}
 
+@Composable
+fun ScaffoldWithSnackBar() {
+    val snackbarHostState = remember { androidx.compose.material3.SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+    Scaffold(
+        snackbarHost = {
+            androidx.compose.material3.SnackbarHost(hostState = snackbarHostState)
+        },
+        floatingActionButton = {
+            ExtendedFloatingActionButton(
+                onClick = {
+                    scope.launch {
+                        val result = snackbarHostState.showSnackbar(
+                            message = "Snackbar",
+                            duration = androidx.compose.material3.SnackbarDuration.Indefinite,
+                            actionLabel = "Action"
+                        )
+                        when (result) {
+                            androidx.compose.material3.SnackbarResult.Dismissed -> {
+                                // Snackbar 被用户手动关闭
+                            }
+
+                            androidx.compose.material3.SnackbarResult.ActionPerformed -> {
+                                // Snackbar 的动作被点击
+                            }
+                        }
+                    }
+                }
+            ) {
+                Icon(Icons.Filled.Add, "Add")
+            }
+        }
+    ) { paddingValues ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues),
+            contentAlignment = androidx.compose.ui.Alignment.Center
+        ) {
+            Text("Main Content")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun ScaffoldWithDrawerPreview() {
+    MyApplicationTheme {
+        ScaffoldWithDrawer()
+    }
+}
+
+@Composable
+fun ScaffoldWithDrawer() {
+    val drawerState = rememberDrawerState(DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+    
+    ModalNavigationDrawer(
+        drawerState = drawerState,
+        drawerContent = {
+            Text("Drawer Content")
+        }
+    ) {
+        Scaffold(
+            floatingActionButton = {
+                ExtendedFloatingActionButton(
+                    text = { Text("Open or Close Drawer") },
+                    icon = {
+                        Icon(Icons.Filled.Add, "Add")
+                    },
+                    onClick = {
+                        scope.launch {
+                            drawerState.apply {
+                                if (isClosed) open() else close()
+                            }
+                        }
+                    }
+                )
+            }
+        ) { paddingValues ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                contentAlignment = androidx.compose.ui.Alignment.Center
+            ) {
+                Text("Main Content")
+            }
+        }
+    }
+}
