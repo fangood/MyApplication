@@ -38,11 +38,13 @@ class ScaffoldActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
+//            MyApplicationTheme {
 //                ScaffoldActivityUI()
 //                ScaffoldWithFab()
-                ScaffoldWithDrawer()
-            }
+//                ScaffoldWithDrawer()
+//                ModalBottomSheetDemo()
+//            }
+            Material3BackdropStyleDemo()
         }
     }
 }
