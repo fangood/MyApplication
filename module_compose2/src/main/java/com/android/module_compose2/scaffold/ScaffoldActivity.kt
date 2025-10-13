@@ -31,6 +31,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.android.module_compose2.canvas.DrawCircleAndRectangle
+import com.android.module_compose2.canvas.TestDrawRect
 import com.android.module_compose2.ui.theme.MyApplicationTheme
 import kotlinx.coroutines.launch
 
@@ -44,7 +46,9 @@ class ScaffoldActivity : ComponentActivity() {
 //                ScaffoldWithDrawer()
 //                ModalBottomSheetDemo()
 //            }
-            Material3BackdropStyleDemo()
+//            Material3BackdropStyleDemo()
+//            DrawCircleAndRectangle()
+            TestDrawRect()
         }
     }
 }
