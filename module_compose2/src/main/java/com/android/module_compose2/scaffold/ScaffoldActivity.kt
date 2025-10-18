@@ -31,8 +31,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.android.module_compose2.animation.TestAnimation
+import com.android.module_compose2.animation.TestChildAnimation
+import com.android.module_compose2.animation.TestCustomAnimation
+import com.android.module_compose2.animation.TestMutableTransitionState
 import com.android.module_compose2.canvas.DrawCircleAndRectangle
 import com.android.module_compose2.canvas.TestDrawRect
+import com.android.module_compose2.sheet.ModalBottomSheetDemo
 import com.android.module_compose2.ui.theme.MyApplicationTheme
 import kotlinx.coroutines.launch
 
@@ -40,15 +45,20 @@ class ScaffoldActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-//            MyApplicationTheme {
+            MyApplicationTheme {
 //                ScaffoldActivityUI()
 //                ScaffoldWithFab()
 //                ScaffoldWithDrawer()
 //                ModalBottomSheetDemo()
-//            }
+
+//                TestAnimation()
+//                TestMutableTransitionState()
+//                TestChildAnimation()
+                TestCustomAnimation()
+            }
 //            Material3BackdropStyleDemo()
 //            DrawCircleAndRectangle()
-            TestDrawRect()
+//            TestDrawRect()
         }
     }
 }
