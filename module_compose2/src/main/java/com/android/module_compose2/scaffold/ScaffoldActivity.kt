@@ -37,6 +37,7 @@ import com.android.module_compose2.animation.TestCustomAnimation
 import com.android.module_compose2.animation.TestMutableTransitionState
 import com.android.module_compose2.canvas.DrawCircleAndRectangle
 import com.android.module_compose2.canvas.TestDrawRect
+import com.android.module_compose2.gesture.TestNestScroll
 import com.android.module_compose2.sheet.ModalBottomSheetDemo
 import com.android.module_compose2.ui.theme.MyApplicationTheme
 import kotlinx.coroutines.launch
@@ -54,7 +55,8 @@ class ScaffoldActivity : ComponentActivity() {
 //                TestAnimation()
 //                TestMutableTransitionState()
 //                TestChildAnimation()
-                TestCustomAnimation()
+//                TestCustomAnimation()
+                TestNestScroll()
             }
 //            Material3BackdropStyleDemo()
 //            DrawCircleAndRectangle()
