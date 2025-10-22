@@ -31,9 +31,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.android.module_compose2.animation.AnimatedContentDemo2
 import com.android.module_compose2.animation.TestAnimation
 import com.android.module_compose2.animation.TestChildAnimation
+import com.android.module_compose2.animation.TestCrossFade
 import com.android.module_compose2.animation.TestCustomAnimation
+import com.android.module_compose2.animation.TestExpandableContent
 import com.android.module_compose2.animation.TestMutableTransitionState
 import com.android.module_compose2.canvas.DrawCircleAndRectangle
 import com.android.module_compose2.canvas.TestDrawRect
@@ -56,7 +59,10 @@ class ScaffoldActivity : ComponentActivity() {
 //                TestMutableTransitionState()
 //                TestChildAnimation()
 //                TestCustomAnimation()
-                TestNestScroll()
+//                TestNestScroll()
+//                AnimatedContentDemo2()
+//                TestExpandableContent()
+                TestCrossFade()
             }
 //            Material3BackdropStyleDemo()
 //            DrawCircleAndRectangle()
