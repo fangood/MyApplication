@@ -24,6 +24,7 @@ benchmarkCommon = "1.4.0"
 coil-compose = "2.4.0"
 constraintlayout-compose = "1.1.1"
 foundation = "1.9.1"
+animation = "1.9.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -56,6 +57,7 @@ androidx-benchmark-common = { group = "androidx.benchmark", name = "benchmark-co
 io-coil-kt = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
 constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout-compose" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "animation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

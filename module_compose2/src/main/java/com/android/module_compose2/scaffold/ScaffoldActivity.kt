@@ -37,7 +37,9 @@ import com.android.module_compose2.animation.TestChildAnimation
 import com.android.module_compose2.animation.TestCrossFade
 import com.android.module_compose2.animation.TestCustomAnimation
 import com.android.module_compose2.animation.TestExpandableContent
+import com.android.module_compose2.animation.TestInfiniteTransition
 import com.android.module_compose2.animation.TestMutableTransitionState
+import com.android.module_compose2.animation.TestTransition
 import com.android.module_compose2.canvas.DrawCircleAndRectangle
 import com.android.module_compose2.canvas.TestDrawRect
 import com.android.module_compose2.gesture.TestNestScroll
@@ -62,7 +64,9 @@ class ScaffoldActivity : ComponentActivity() {
 //                TestNestScroll()
 //                AnimatedContentDemo2()
 //                TestExpandableContent()
-                TestCrossFade()
+//                TestCrossFade()
+//                TestTransition()
+                TestInfiniteTransition()
             }
 //            Material3BackdropStyleDemo()
 //            DrawCircleAndRectangle()

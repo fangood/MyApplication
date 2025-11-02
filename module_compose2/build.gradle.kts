@@ -64,4 +64,5 @@ dependencies {
     implementation(libs.viewmodel.compose)
     implementation(libs.io.coil.kt)
     implementation(libs.constraintlayout.compose)
+    implementation(libs.androidx.compose.animation)
 }
