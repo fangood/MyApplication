@@ -32,6 +32,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.android.module_compose2.animation.AnimatedContentDemo2
+import com.android.module_compose2.animation.TargetBasedAnimationDemo
 import com.android.module_compose2.animation.TestAnimation
 import com.android.module_compose2.animation.TestChildAnimation
 import com.android.module_compose2.animation.TestCrossFade
@@ -66,7 +67,8 @@ class ScaffoldActivity : ComponentActivity() {
 //                TestExpandableContent()
 //                TestCrossFade()
 //                TestTransition()
-                TestInfiniteTransition()
+//                TestInfiniteTransition()
+                TargetBasedAnimationDemo()
             }
 //            Material3BackdropStyleDemo()
 //            DrawCircleAndRectangle()
